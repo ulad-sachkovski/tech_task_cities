@@ -9,8 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -33,35 +31,35 @@ public class CountryControllerImpl implements CountryController {
 
     @Override
     public ResponseEntity<Flux<CityWithFlagDto>> getAllCitiesWithFlags(int page, int size) {
-        log.info("Start of end-point GET/cities/all");
+        log.info("Start of end-point GET/api/countries-application/cities/all");
         Pageable pageable = PageRequest.of(page, size);
         Flux<CityWithFlagDto> response = countryService.getCitiesWithFlags(pageable);
-        log.info("End of end-point GET/cities/all");
+        log.info("End of end-point GET/api/countries-application/cities/all");
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Flux<CountryNameDto>> getAllCountryNames(int page, int size) {
-        log.info("Start of end-point GET/countries/names");
+        log.info("Start of end-point GET/api/countries-application/countries/names");
         Pageable pageable = PageRequest.of(page, size);
         Flux<CountryNameDto> response = countryService.getCountryNames(pageable);
-        log.info("End of end-point GET/countries/names");
+        log.info("End of end-point GET/api/countries-application/countries/names");
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Mono<CityWithFlagDto>> getCity(String city) {
-        log.info("Start of end-point GET/countries/names");
+        log.info("Start of end-point GET/api/countries-application/cities/{city}");
         Mono<CityWithFlagDto> response = countryService.getCity(city);
-        log.info("End of end-point GET/countries/names");
+        log.info("End of end-point GET/api/countries-application/cities/{city}");
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<Mono<CountryDto>> updateCountry(CountryDto countryDto) {
-        log.info("Start of end-point GET/countries/names");
+        log.info("Start of end-point PUT/api/countries-application/countries/update");
         Mono<CountryDto> response = countryService.updateCountry(countryDto);
-        log.info("End of end-point GET/countries/names");
+        log.info("End of end-point PUT/api/countries-application/countries/update");
         return ResponseEntity.ok(response);
     }
 }
