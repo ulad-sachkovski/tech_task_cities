@@ -22,7 +22,7 @@ import java.util.Comparator;
 public class CountryServiceImpl implements CountryService {
 
     private final CountryRepository countryRepository;
-    private final CountryMapper countryMapperSpring = Mappers.getMapper(CountryMapper.class);
+    private final CountryMapper countryMapper = Mappers.getMapper(CountryMapper.class);
 
 
     @Override
@@ -34,30 +34,32 @@ public class CountryServiceImpl implements CountryService {
                     foundCountry.setFlag(countryDto.getFlag());
                     foundCountry.setCities(countryDto.getCities()
                             .stream()
-                            .map(countryMapperSpring::toCity)
+                            .map(countryMapper::toCity)
                             .toList());
 
-                    return countryMapperSpring.toCountryDto(foundCountry);
-                });
+                    return foundCountry;
+                })
+                .flatMap(countryRepository::save)
+                .map(countryMapper::toCountryDto);
     }
 
     @Override
     public Flux<CityDto> getCitiesFromOneCountry(String country) {
         return countryRepository.findByNameIgnoreCase(country)
                 .flatMapIterable(Country::getCities)
-                .map(countryMapperSpring::toCityDto);
+                .map(countryMapper::toCityDto);
     }
 
     @Override
     public Flux<CountryNameDto> getCountryNames(Pageable pageable) {
         return countryRepository.findAllByOrderByName(pageable)
-                .map(countryMapperSpring::toCountryNameDto);
+                .map(countryMapper::toCountryNameDto);
     }
 
     @Override
     public Flux<CityWithFlagDto> getCitiesWithFlags(Pageable pageable) {
         return countryRepository.findAll()
-                .flatMap(countryMapperSpring::toFluxCityWithFlagDto)
+                .flatMap(countryMapper::toFluxCityWithFlagDto)
                 .sort(Comparator.comparing(CityWithFlagDto::getName))
                 .skip(pageable.getOffset())
                 .take(pageable.getPageSize());
@@ -66,7 +68,7 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public Mono<CityWithFlagDto> getCity(String city) {
         return countryRepository.findByCitiesNameIgnoreCase(city)
-                .map(countryMapperSpring::toCityWithFlagDto);
+                .map(countryMapper::toCityWithFlagDto);
     }
 
 }

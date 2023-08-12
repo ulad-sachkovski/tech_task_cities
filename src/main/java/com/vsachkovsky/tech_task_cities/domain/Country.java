@@ -18,7 +18,7 @@ import java.util.List;
 public class Country {
 
     @Id
-    private String countryId;
+    private String id;
     @Indexed
     private String name;
     private byte[] flag;

@@ -9,8 +9,6 @@ import com.vsachkovsky.tech_task_cities.model.CountryNameDto;
 import org.mapstruct.Mapper;
 import reactor.core.publisher.Flux;
 
-import java.util.List;
-
 @Mapper(componentModel = "spring")
 public interface CountryMapper {
 
