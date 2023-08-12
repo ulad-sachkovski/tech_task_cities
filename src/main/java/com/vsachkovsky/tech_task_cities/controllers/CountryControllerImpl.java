@@ -1,6 +1,5 @@
-package com.vsachkovsky.tech_task_cities.controllers.impl;
+package com.vsachkovsky.tech_task_cities.controllers;
 
-import com.vsachkovsky.tech_task_cities.controllers.interfaces.CountryController;
 import com.vsachkovsky.tech_task_cities.model.CityDto;
 import com.vsachkovsky.tech_task_cities.model.CityWithFlagDto;
 import com.vsachkovsky.tech_task_cities.model.CountryNameDto;

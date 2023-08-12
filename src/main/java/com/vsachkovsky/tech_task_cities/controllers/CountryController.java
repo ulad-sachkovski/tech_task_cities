@@ -1,4 +1,4 @@
-package com.vsachkovsky.tech_task_cities.controllers.interfaces;
+package com.vsachkovsky.tech_task_cities.controllers;
 
 import com.vsachkovsky.tech_task_cities.model.CityDto;
 import com.vsachkovsky.tech_task_cities.model.CityWithFlagDto;
