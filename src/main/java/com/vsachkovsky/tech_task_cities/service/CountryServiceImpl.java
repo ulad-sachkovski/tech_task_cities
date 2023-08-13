@@ -1,6 +1,8 @@
 package com.vsachkovsky.tech_task_cities.service;
 
 import com.vsachkovsky.tech_task_cities.domain.Country;
+import com.vsachkovsky.tech_task_cities.exception.EntityType;
+import com.vsachkovsky.tech_task_cities.exception.NotFoundException;
 import com.vsachkovsky.tech_task_cities.mapper.CountryMapper;
 import com.vsachkovsky.tech_task_cities.model.CityDto;
 import com.vsachkovsky.tech_task_cities.model.CityWithFlagDto;
@@ -24,11 +26,12 @@ public class CountryServiceImpl implements CountryService {
     private final CountryRepository countryRepository;
     private final CountryMapper countryMapper = Mappers.getMapper(CountryMapper.class);
 
-
     @Override
     @Transactional
     public Mono<CountryDto> updateCountry(CountryDto countryDto) {
         return countryRepository.findById(countryDto.getId())
+                .switchIfEmpty(Mono.error(() ->
+                        NotFoundException.notFoundById(EntityType.COUNTRY, countryDto.getId())))
                 .map(foundCountry -> {
                     foundCountry.setName(countryDto.getName());
                     foundCountry.setFlag(countryDto.getFlag());
@@ -46,6 +49,8 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public Flux<CityDto> getCitiesFromOneCountry(String country) {
         return countryRepository.findByNameIgnoreCase(country)
+                .switchIfEmpty(Mono.error(() ->
+                        NotFoundException.notFoundByName(EntityType.COUNTRY, country)))
                 .flatMapIterable(Country::getCities)
                 .map(countryMapper::toCityDto);
     }
@@ -68,7 +73,8 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public Mono<CityWithFlagDto> getCity(String city) {
         return countryRepository.findByCitiesNameIgnoreCase(city)
-                .map(countryMapper::toCityWithFlagDto);
+                .map(countryMapper::toCityWithFlagDto)
+                .switchIfEmpty(Mono.error(() ->
+                        NotFoundException.notFoundByName(EntityType.CITY, city)));
     }
-
 }

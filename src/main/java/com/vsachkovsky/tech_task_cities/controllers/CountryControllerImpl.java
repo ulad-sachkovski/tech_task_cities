@@ -1,5 +1,6 @@
 package com.vsachkovsky.tech_task_cities.controllers;
 
+import com.vsachkovsky.tech_task_cities.domain.City;
 import com.vsachkovsky.tech_task_cities.model.CityDto;
 import com.vsachkovsky.tech_task_cities.model.CityWithFlagDto;
 import com.vsachkovsky.tech_task_cities.model.CountryDto;
@@ -10,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

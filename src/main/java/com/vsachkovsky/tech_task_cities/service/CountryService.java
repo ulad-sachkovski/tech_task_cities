@@ -19,5 +19,4 @@ public interface CountryService {
     Mono<CityWithFlagDto> getCity(String city);
 
     Flux<CityDto> getCitiesFromOneCountry(String country);
-
 }
