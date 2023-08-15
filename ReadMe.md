@@ -27,8 +27,9 @@
 ### How to run
   ```shell
 - Start docker compose file
-- Open your browser and go keycloak login page: http://localhost:8491/auth/. Credentials are: test
+- Open your browser and go keycloak login page: http://localhost:8491/auth/
 - Import realm-export.json from documents folder
+- Create users. Role "EDITOR" already defined. Just map it to already created user
 - Start the application
 
 Note: When application is started, database recovers to initial state. However, id of countries will change (see implementation in config.data_init package)
