@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class CityWithFlagDto {
 
-    private String name;
     private byte[] countryFlag;
+    private CityDto cityDto;
 }

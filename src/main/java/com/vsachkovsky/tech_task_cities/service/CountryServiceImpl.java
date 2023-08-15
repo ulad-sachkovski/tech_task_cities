@@ -17,14 +17,18 @@ import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.Comparator;
-
 @Service
 @AllArgsConstructor
 public class CountryServiceImpl implements CountryService {
 
     private final CountryRepository countryRepository;
     private final CountryMapper countryMapper = Mappers.getMapper(CountryMapper.class);
+
+    @Override
+    public Mono<CountryDto> getCountry(String name) {
+        return countryRepository.findByNameIgnoreCase(name)
+                .map(countryMapper::toCountryDto);
+    }
 
     @Override
     @Transactional
@@ -65,7 +69,6 @@ public class CountryServiceImpl implements CountryService {
     public Flux<CityWithFlagDto> getCitiesWithFlags(Pageable pageable) {
         return countryRepository.findAll()
                 .flatMap(countryMapper::toFluxCityWithFlagDto)
-                .sort(Comparator.comparing(CityWithFlagDto::getName))
                 .skip(pageable.getOffset())
                 .take(pageable.getPageSize());
     }
@@ -73,8 +76,9 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public Mono<CityWithFlagDto> getCity(String city) {
         return countryRepository.findByCitiesNameIgnoreCase(city)
-                .map(countryMapper::toCityWithFlagDto)
                 .switchIfEmpty(Mono.error(() ->
-                        NotFoundException.notFoundByName(EntityType.CITY, city)));
+                        NotFoundException.notFoundByName(EntityType.CITY, city)))
+                .map(country -> countryMapper.toCityWithFlagDto(country, city));
+
     }
 }

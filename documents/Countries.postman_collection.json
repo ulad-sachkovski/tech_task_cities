@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "909e146d-7d2b-4559-ba74-53b8b5f4adb0",
+		"name": "Countries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26947419"
+	},
+	"item": [
+		{
+			"name": "get code for access token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8491/auth/realms/countries/protocol/openid-connect/auth?client_id=countries-auth&response_type=code&scope=openid profile&redirect_uri=http://localhost:8491/login/oauth2/code/keycloak&state=asdasddsfsdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8491",
+					"path": [
+						"auth",
+						"realms",
+						"countries",
+						"protocol",
+						"openid-connect",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "countries-auth"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "scope",
+							"value": "openid profile"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8491/login/oauth2/code/keycloak"
+						},
+						{
+							"key": "state",
+							"value": "asdasddsfsdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "receive access token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "countries-auth",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "X7Him83588CVgipqYSbclqyELZzIvVEp",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "8f3146cc-4ceb-4537-84c6-11ae132d0232.62c961e6-5a01-4937-a95b-1f9d1687e3da.47a18580-d9ed-40ac-967b-7c07488e6f4f",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8491/login/oauth2/code/keycloak",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "profile",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8491/auth/realms/countries/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8491",
+					"path": [
+						"auth",
+						"realms",
+						"countries",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get country",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTAzNTUsImlhdCI6MTY5MjExMDA1NSwiYXV0aF90aW1lIjoxNjkyMTEwMDQwLCJqdGkiOiIyMGQ0NjNkOS1mYTJlLTQ2YzAtYjQzMC1jYTZlNzhiMWIyODAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImYwMmRkOTQzLWU0OWMtNDZhZi04YzM4LWRkODY4YjdiMDJmOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCJ9.HfPlewviXbbCk8fdZEuKbzD9lXPJtNLdDv4ogNAy9AsB31ZVJ_McXquv3w4MPGylIPx827su3bZcHGGjcfrfqx_b7pN7A8HRCH-mZ79Ddf5oQnt_le3A144XsfeMMh-X-_9WcjK-H4TnKFYhB7A7Ulm4C_m3RhkIhZd2quwzP4Luh7JZydFVg5oC8TP2diQhUSkuCpYUDNNgx0Ix6NVYFBkcSTNZ-7ITXigU7ite0syraOPDwDAcVESV5uZE6TA26ls3n87uqwAMQxPpQ4iSefPsNZk6_Hc0ZLJulz-yQQRYGrkJkPjilX9chspzCo3DlHW2uN51BMPbQ6TysNBh6A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8090/api/countries-application/belarus",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"countries-application",
+						"belarus"
+					]
+				},
+				"description": "api/countries-application/{country}"
+			},
+			"response": []
+		},
+		{
+			"name": "get cities of exact country",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTAzNTUsImlhdCI6MTY5MjExMDA1NSwiYXV0aF90aW1lIjoxNjkyMTEwMDQwLCJqdGkiOiIyMGQ0NjNkOS1mYTJlLTQ2YzAtYjQzMC1jYTZlNzhiMWIyODAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImYwMmRkOTQzLWU0OWMtNDZhZi04YzM4LWRkODY4YjdiMDJmOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCJ9.HfPlewviXbbCk8fdZEuKbzD9lXPJtNLdDv4ogNAy9AsB31ZVJ_McXquv3w4MPGylIPx827su3bZcHGGjcfrfqx_b7pN7A8HRCH-mZ79Ddf5oQnt_le3A144XsfeMMh-X-_9WcjK-H4TnKFYhB7A7Ulm4C_m3RhkIhZd2quwzP4Luh7JZydFVg5oC8TP2diQhUSkuCpYUDNNgx0Ix6NVYFBkcSTNZ-7ITXigU7ite0syraOPDwDAcVESV5uZE6TA26ls3n87uqwAMQxPpQ4iSefPsNZk6_Hc0ZLJulz-yQQRYGrkJkPjilX9chspzCo3DlHW2uN51BMPbQ6TysNBh6A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8090/api/countries-application/belarus/cities",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"countries-application",
+						"belarus",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all cities with flags",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTAzNTUsImlhdCI6MTY5MjExMDA1NSwiYXV0aF90aW1lIjoxNjkyMTEwMDQwLCJqdGkiOiIyMGQ0NjNkOS1mYTJlLTQ2YzAtYjQzMC1jYTZlNzhiMWIyODAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImYwMmRkOTQzLWU0OWMtNDZhZi04YzM4LWRkODY4YjdiMDJmOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCJ9.HfPlewviXbbCk8fdZEuKbzD9lXPJtNLdDv4ogNAy9AsB31ZVJ_McXquv3w4MPGylIPx827su3bZcHGGjcfrfqx_b7pN7A8HRCH-mZ79Ddf5oQnt_le3A144XsfeMMh-X-_9WcjK-H4TnKFYhB7A7Ulm4C_m3RhkIhZd2quwzP4Luh7JZydFVg5oC8TP2diQhUSkuCpYUDNNgx0Ix6NVYFBkcSTNZ-7ITXigU7ite0syraOPDwDAcVESV5uZE6TA26ls3n87uqwAMQxPpQ4iSefPsNZk6_Hc0ZLJulz-yQQRYGrkJkPjilX9chspzCo3DlHW2uN51BMPbQ6TysNBh6A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8090/api/countries-application/cities/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"countries-application",
+						"cities",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get names of all countries",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTAzNTUsImlhdCI6MTY5MjExMDA1NSwiYXV0aF90aW1lIjoxNjkyMTEwMDQwLCJqdGkiOiIyMGQ0NjNkOS1mYTJlLTQ2YzAtYjQzMC1jYTZlNzhiMWIyODAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImYwMmRkOTQzLWU0OWMtNDZhZi04YzM4LWRkODY4YjdiMDJmOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCJ9.HfPlewviXbbCk8fdZEuKbzD9lXPJtNLdDv4ogNAy9AsB31ZVJ_McXquv3w4MPGylIPx827su3bZcHGGjcfrfqx_b7pN7A8HRCH-mZ79Ddf5oQnt_le3A144XsfeMMh-X-_9WcjK-H4TnKFYhB7A7Ulm4C_m3RhkIhZd2quwzP4Luh7JZydFVg5oC8TP2diQhUSkuCpYUDNNgx0Ix6NVYFBkcSTNZ-7ITXigU7ite0syraOPDwDAcVESV5uZE6TA26ls3n87uqwAMQxPpQ4iSefPsNZk6_Hc0ZLJulz-yQQRYGrkJkPjilX9chspzCo3DlHW2uN51BMPbQ6TysNBh6A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8090/api/countries-application/countries/names",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"countries-application",
+						"countries",
+						"names"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get exact city",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTAzNTUsImlhdCI6MTY5MjExMDA1NSwiYXV0aF90aW1lIjoxNjkyMTEwMDQwLCJqdGkiOiIyMGQ0NjNkOS1mYTJlLTQ2YzAtYjQzMC1jYTZlNzhiMWIyODAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImYwMmRkOTQzLWU0OWMtNDZhZi04YzM4LWRkODY4YjdiMDJmOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCJ9.HfPlewviXbbCk8fdZEuKbzD9lXPJtNLdDv4ogNAy9AsB31ZVJ_McXquv3w4MPGylIPx827su3bZcHGGjcfrfqx_b7pN7A8HRCH-mZ79Ddf5oQnt_le3A144XsfeMMh-X-_9WcjK-H4TnKFYhB7A7Ulm4C_m3RhkIhZd2quwzP4Luh7JZydFVg5oC8TP2diQhUSkuCpYUDNNgx0Ix6NVYFBkcSTNZ-7ITXigU7ite0syraOPDwDAcVESV5uZE6TA26ls3n87uqwAMQxPpQ4iSefPsNZk6_Hc0ZLJulz-yQQRYGrkJkPjilX9chspzCo3DlHW2uN51BMPbQ6TysNBh6A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8090/api/countries-application/cities/minsk",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"countries-application",
+						"cities",
+						"minsk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update country (please, update country id)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTEzNjMsImlhdCI6MTY5MjExMTA2MywiYXV0aF90aW1lIjoxNjkyMTExMDQ5LCJqdGkiOiJlY2YyZTY4OS1mMWFjLTQyMGUtOTUyOC1mZTExOWZmY2U4NmYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQxYmYwZjg0LWQ4MzYtNDg2Yi1iNjZkLTE5NDZlNjRkYjM0ZSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZWRpdG9yIiwiRURJVE9SIiwiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWRpdG9yIn0.UAF2ux9zn6gfwrckM0qwMdfq3-jo8tuzsDEOAJ2AxoaAvi89wPm3EPN3ltxrvkAU_6qyd7dI_a_SkDfFg9Y5_weqzLmzwwm1O28FaY999kJB9-wn6MLwh07FuSp0uNJxwf09XLquEDd43qSnCKJhM7LM_5gtljxZeGKU31_8hoSWCUD2n2zMLxKaOWGVVaimQQFb58DU6lYJ2LfBXF_5TFWZxxqvAYe-DMv2nkEfWmYGoA8NMayt2kn-Dbhvk7OP8F7kkNn5jAX9yXoC7vU2_VSkoTFdG2KCT_TIAkTvRKmhvvPEGgsa6X2sq0QA3-eu9YAygfZlzPjQzys3xR-QvA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"64db8c7b565d9b6d8c482a1c\",\r\n    \"name\": \"Belarus\",\r\n    \"flag\": \"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\",\r\n    \"cities\": [\r\n        {\r\n            \"name\": \"Pinsk\"\r\n        },\r\n        {\r\n            \"name\": \"Mogilev\"\r\n        },\r\n        {\r\n            \"name\": \"Grodno\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/api/countries-application/countries/update",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"countries-application",
+						"countries",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

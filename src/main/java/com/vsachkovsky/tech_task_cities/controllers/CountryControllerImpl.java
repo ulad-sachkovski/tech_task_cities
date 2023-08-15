@@ -1,6 +1,5 @@
 package com.vsachkovsky.tech_task_cities.controllers;
 
-import com.vsachkovsky.tech_task_cities.domain.City;
 import com.vsachkovsky.tech_task_cities.model.CityDto;
 import com.vsachkovsky.tech_task_cities.model.CityWithFlagDto;
 import com.vsachkovsky.tech_task_cities.model.CountryDto;
@@ -11,10 +10,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.Map;
 
 @RestController
 @AllArgsConstructor
@@ -22,6 +25,25 @@ import reactor.core.publisher.Mono;
 public class CountryControllerImpl implements CountryController {
 
     private final CountryService countryService;
+
+
+    @GetMapping("/attributes")
+    Mono<Map<String, Object>> claims(@AuthenticationPrincipal JwtAuthenticationToken auth) {
+        return Mono.just(auth.getTokenAttributes());
+    }
+
+    @GetMapping("/token")
+    Mono<String> token(@AuthenticationPrincipal JwtAuthenticationToken auth) {
+        return Mono.just(auth.getToken().getTokenValue().toString());
+    }
+
+    @Override
+    public ResponseEntity<Mono<CountryDto>> getCountry(String country) {
+        log.info("Start of end-point GET/api/{country}");
+        Mono<CountryDto> response = countryService.getCountry(country);
+        log.info("End of end-point GET/api/{country}");
+        return ResponseEntity.ok(response);
+    }
 
     @Override
     public ResponseEntity<Flux<CityDto>> getAllCitiesByCountryName(String country) {

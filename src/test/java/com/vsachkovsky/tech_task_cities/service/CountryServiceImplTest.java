@@ -1,5 +1,6 @@
 //package com.vsachkovsky.tech_task_cities.service;
 //
+//import com.vsachkovsky.tech_task_cities.controllers.CountryController;
 //import com.vsachkovsky.tech_task_cities.domain.City;
 //import com.vsachkovsky.tech_task_cities.domain.Country;
 //import com.vsachkovsky.tech_task_cities.mapper.CountryMapper;
@@ -11,6 +12,7 @@
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.test.context.SpringBootTest;
 //import org.springframework.test.context.junit.jupiter.SpringExtension;
+//import org.springframework.test.web.servlet.MockMvc;
 //import reactor.core.publisher.Mono;
 //
 //import java.util.ArrayList;
@@ -25,6 +27,12 @@
 //
 //    @Autowired
 //    CountryService countryService;
+//
+//    @Autowired
+//    CountryController countryController;
+//
+//    @Autowired
+//    MockMvc mockMvc;
 //
 //    @Autowired
 //    CountryMapper countryMapper;

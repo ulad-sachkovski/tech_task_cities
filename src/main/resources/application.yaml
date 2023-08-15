@@ -2,8 +2,30 @@ server:
   port: 8090
 
 spring:
+  main:
+    allow-bean-definition-overriding: true
   data:
     mongodb:
       uri: mongodb://localhost:27017/countries
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8491/auth/realms/countries
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: countries-auth
+            authorization-grant-type: authorization_code
+            scope: openid
+            client-secret: X7Him83588CVgipqYSbclqyELZzIvVEp
+            redirect-uri: http://localhost:8491/login/oauth2/code/keycloak
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8491/auth/realms/countries
+          jwk-set-uri: http://localhost:8491/auth/realms/countries/protocol/openid-connect/certs
+
+
 
 

@@ -1,5 +1,7 @@
 package com.vsachkovsky.tech_task_cities.model;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,8 +15,12 @@ import java.util.List;
 @Data
 public class CountryDto {
 
+    @NotNull(message = "Country id can not by null")
     private String id;
+    @NotNull(message = "Country name can not by null")
     private String name;
+    @NotNull(message = "Country flag can not by null")
     private byte[] flag;
+    @NotEmpty(message = "Country must contain at least one city")
     private List<CityDto> cities;
 }

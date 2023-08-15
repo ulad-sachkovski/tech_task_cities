@@ -10,6 +10,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - app
 
   mongo-express:
     image: mongo-express
@@ -20,3 +22,23 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+    networks:
+      - app
+
+  keycloak-countries:
+    image: jboss/keycloak
+    container_name: keycloak-countries
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    volumes:
+      - ../keycloak/keycloak-forgot-password-plugin-1.0-SNAPSHOT.jar:/opt/jboss/keycloak/standalone/deployments/keycloak-forgot-password-plugin.jar
+    ports:
+      - "8491:8080"
+    networks:
+      - app
+    restart: unless-stopped
+
+networks:
+  app:
+    driver: bridge
