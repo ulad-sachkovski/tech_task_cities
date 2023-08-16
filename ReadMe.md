@@ -29,8 +29,7 @@
 - Start docker compose file
 - Open your browser and go keycloak login page: http://localhost:8491/auth/
 - Import realm-export.json from documents folder
-- Go to clients => countries-auth => settings => authorization enabled => on 
-- Go to clients => countries-auth => settings => Valid Redirect URIs => paste http://localhost:8491/login/oauth2/code/keycloak. Click save
+- Go to clients => countries-auth => settings => authorization enabled => on. Click save
 - Create users in users tab. Role "EDITOR" already defined. Just map it to already created user
 - Start the application
 
