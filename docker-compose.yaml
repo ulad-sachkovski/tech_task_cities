@@ -29,8 +29,8 @@ services:
     image: jboss/keycloak
     container_name: keycloak-countries
     environment:
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_USER: test
+      KEYCLOAK_PASSWORD: test
     volumes:
       - ../keycloak/keycloak-forgot-password-plugin-1.0-SNAPSHOT.jar:/opt/jboss/keycloak/standalone/deployments/keycloak-forgot-password-plugin.jar
     ports:

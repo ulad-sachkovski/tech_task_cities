@@ -29,6 +29,8 @@
 - Start docker compose file
 - Open your browser and go keycloak login page: http://localhost:8491/auth/. Credentials are: test
 - Import realm-export.json from documents folder
+- Go to clients => countries-auth => settings => authorization enabled => on
+- Go to clients => countries-auth => credentidals and copy secret. Paste this secret in application.yaml
 - Start the application
 
 Note: When application is started, database recovers to initial state. However, id of countries will change (see implementation in config.data_init package)
