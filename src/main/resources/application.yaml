@@ -19,7 +19,7 @@ spring:
             client-id: countries-auth
             authorization-grant-type: authorization_code
             scope: openid
-            client-secret: X7Him83588CVgipqYSbclqyELZzIvVEp
+            client-secret: # paste secret here
             redirect-uri: http://localhost:8491/login/oauth2/code/keycloak
       resourceserver:
         jwt:
