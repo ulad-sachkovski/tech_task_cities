@@ -68,9 +68,10 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public Flux<CityWithFlagDto> getCitiesWithFlags(Pageable pageable) {
         return countryRepository.findAll()
-                .flatMap(countryMapper::toFluxCityWithFlagDto)
                 .skip(pageable.getOffset())
-                .take(pageable.getPageSize());
+                .take(pageable.getPageSize())
+                .flatMap(countryMapper::toFluxCityWithFlagDto);
+
     }
 
     @Override

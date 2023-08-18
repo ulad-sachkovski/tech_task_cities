@@ -26,7 +26,6 @@ public class CountryControllerImpl implements CountryController {
 
     private final CountryService countryService;
 
-
     @GetMapping("/attributes")
     Mono<Map<String, Object>> claims(@AuthenticationPrincipal JwtAuthenticationToken auth) {
         return Mono.just(auth.getTokenAttributes());

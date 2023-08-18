@@ -27,7 +27,7 @@ public interface CountryController {
     ResponseEntity<Flux<CityWithFlagDto>> getAllCitiesWithFlags(@Valid @PositiveOrZero
                                                                 @RequestParam(required = false, defaultValue = "0") final int page,
                                                                 @Valid @Positive
-                                                                @RequestParam(required = false, defaultValue = "4") final int size);
+                                                                @RequestParam(required = false, defaultValue = "2") final int size);
 
     @GetMapping("/countries/names")
     ResponseEntity<Flux<CountryNameDto>> getAllCountryNames(@Valid @PositiveOrZero
