@@ -1,4 +1,4 @@
-package com.vsachkovsky.tech_task_cities.service;
+package com.vsachkovsky.tech_task_cities.controller;
 
 import com.vsachkovsky.tech_task_cities.domain.City;
 import com.vsachkovsky.tech_task_cities.domain.Country;
