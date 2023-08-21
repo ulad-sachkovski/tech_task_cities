@@ -4,18 +4,24 @@ import com.vsachkovsky.tech_task_cities.domain.City;
 import com.vsachkovsky.tech_task_cities.domain.Country;
 import com.vsachkovsky.tech_task_cities.repository.CountryRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.List;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.*;
 
 @Component
 @AllArgsConstructor
+@Slf4j
 public class InitDBData {
 
     private final CountryRepository countryRepository;
@@ -27,92 +33,60 @@ public class InitDBData {
                         loadCountryData())
                 .subscribe();
     }
+
+    private Map<String, String> getCountryCodes() {
+        Map<String, String> countryCodes = new HashMap<>();
+        for (String iso : Locale.getISOCountries()) {
+            Locale l = new Locale("", iso);
+            countryCodes.put(l.getDisplayCountry(), iso);
+        }
+        return countryCodes;
+    }
+
     private void loadCountryData() {
+        Map<String, String> countryCodes = getCountryCodes();
+
         countryRepository.count().subscribe(count ->
         {
             if (count == 0) {
-                countryRepository.save(createPolandCountry()).subscribe();
-                countryRepository.save(createBelarusCountry()).subscribe();
-                countryRepository.save(createUkraineCountry()).subscribe();
+
+                try (FileReader reader = new FileReader("documents/countries.json")) {
+                    Object obj = new JSONParser().parse(reader);
+                    JSONObject countryJSON = (JSONObject) obj;
+
+                    for (Object key : countryJSON.keySet()) {
+                        String countryName = (String) key;
+                        JSONArray citiesJSON = (JSONArray) countryJSON.get(countryName);
+                        Iterator iterator = citiesJSON.iterator();
+                        ArrayList<City> cities = new ArrayList<>();
+                        while (iterator.hasNext()) {
+                            cities.add(City.builder()
+                                    .name((String) iterator.next())
+                                    .build());
+                        }
+
+                        String shortName = countryCodes.get(countryName);
+                        String link = String.format("https://flagcdn.com/16x12/%s.png", shortName.toLowerCase(Locale.ROOT));
+                        URL url = new URL(link);
+                        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                        connection.setRequestMethod("GET");
+                        connection.setConnectTimeout(5000);
+                        connection.setReadTimeout(5000);
+
+                        byte[] countryFlag = connection.getInputStream().readAllBytes();
+                        connection.disconnect();
+
+                        countryRepository.save(Country.builder()
+                                .name(countryName)
+                                .flag(countryFlag)
+                                .cities(cities)
+                                .build()).subscribe();
+                    }
+                } catch (IOException | ParseException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
-    }
-
-    private Country createBelarusCountry() {
-        City city1 = City.builder()
-                .name("Minsk")
-                .build();
-        City city2 = City.builder()
-                .name("Mogilev")
-                .build();
-        City city3 = City.builder()
-                .name("Grodno")
-                .build();
-
-        File file = new File("flags/Belarus.jpg");
-        byte[] flag;
-        try {
-            flag = Files.readAllBytes(file.toPath());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        return Country.builder()
-                .name("Belarus")
-                .flag(flag)
-                .cities(new ArrayList<>(List.of(city1, city2, city3)))
-                .build();
-    }
-
-    private Country createUkraineCountry() {
-        City city2 = City.builder()
-                .name("Lvov")
-                .build();
-        City city1 = City.builder()
-                .name("Kiev")
-                .build();
-        City city3 = City.builder()
-                .name("Odessa")
-                .build();
-
-        File file = new File("flags/Ukraine.jpg");
-        byte[] flag;
-        try {
-            flag = Files.readAllBytes(file.toPath());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        return Country.builder()
-                .name("Ukraine")
-                .flag(flag)
-                .cities(new ArrayList<>(List.of(city1, city2, city3)))
-                .build();
-    }
-
-    private Country createPolandCountry() {
-        City city1 = City.builder()
-                .name("Warsaw")
-                .build();
-        City city2 = City.builder()
-                .name("Krakov")
-                .build();
-        City city3 = City.builder()
-                .name("Gdansk")
-                .build();
-
-        File file = new File("flags/Poland.jpg");
-        byte[] flag;
-        try {
-            flag = Files.readAllBytes(file.toPath());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        return Country.builder()
-                .name("Poland")
-                .flag(flag)
-                .cities(new ArrayList<>(List.of(city1, city2, city3)))
-                .build();
+        log.info("Database was successfully loaded");
     }
 }

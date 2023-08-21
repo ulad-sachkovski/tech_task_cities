@@ -20,7 +20,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 public class CountryControllerImplTest {
 
     @Autowired
-    CountryMapper countryMapper;
+    private CountryMapper countryMapper;
     @Autowired
     private WebTestClient webTestClient;
     @Autowired
