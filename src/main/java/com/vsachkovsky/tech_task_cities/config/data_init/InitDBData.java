@@ -50,9 +50,8 @@ public class InitDBData {
         {
             if (count == 0) {
 
-                JSONParser jsonParser = new JSONParser();
                 try (FileReader reader = new FileReader("documents/countries.json")) {
-                    Object obj = jsonParser.parse(reader);
+                    Object obj = new JSONParser().parse(reader);
                     JSONObject countryJSON = (JSONObject) obj;
 
                     for (Object key : countryJSON.keySet()) {
