@@ -135,7 +135,7 @@ public class CountryControllerImplTest {
         countryRepository.findByNameIgnoreCase(countryName)
                 .subscribe(result -> {
                     result.getCities().add(City.builder()
-                            .name("Pinsk")
+                            .name("Senno")
                             .build());
 
                     CountryDto requestDto = countryMapper.toCountryDto(result);

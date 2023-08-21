@@ -45,36 +45,11 @@ public class CountryControllerImpl implements CountryController {
     }
 
     @Override
-    public ResponseEntity<Flux<CityDto>> getAllCitiesByCountryName(String country) {
-        log.info("Start of end-point GET/api/{country}/cities");
-        Flux<CityDto> response = countryService.getCitiesFromOneCountry(country);
-        log.info("End of end-point GET/api/{country}/cities");
-        return ResponseEntity.ok(response);
-    }
-
-    @Override
-    public ResponseEntity<Flux<CityWithFlagDto>> getAllCitiesWithFlags(int page, int size) {
-        log.info("Start of end-point GET/api/countries-application/cities/all");
-        Pageable pageable = PageRequest.of(page, size);
-        Flux<CityWithFlagDto> response = countryService.getCitiesWithFlags(pageable);
-        log.info("End of end-point GET/api/countries-application/cities/all");
-        return ResponseEntity.ok(response);
-    }
-
-    @Override
     public ResponseEntity<Flux<CountryNameDto>> getAllCountryNames(int page, int size) {
         log.info("Start of end-point GET/api/countries-application/countries/names");
         Pageable pageable = PageRequest.of(page, size);
         Flux<CountryNameDto> response = countryService.getCountryNames(pageable);
         log.info("End of end-point GET/api/countries-application/countries/names");
-        return ResponseEntity.ok(response);
-    }
-
-    @Override
-    public ResponseEntity<Mono<CityWithFlagDto>> getCity(String city) {
-        log.info("Start of end-point GET/api/countries-application/cities/{city}");
-        Mono<CityWithFlagDto> response = countryService.getCity(city);
-        log.info("End of end-point GET/api/countries-application/cities/{city}");
         return ResponseEntity.ok(response);
     }
 
