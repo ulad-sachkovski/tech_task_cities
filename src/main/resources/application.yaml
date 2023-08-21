@@ -25,6 +25,8 @@ spring:
         jwt:
           issuer-uri: http://localhost:8491/auth/realms/countries-and-cities
 
-
+springdoc:
+  api-docs:
+    enabled: true
 
 

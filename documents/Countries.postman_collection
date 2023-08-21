@@ -118,12 +118,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTAzNTUsImlhdCI6MTY5MjExMDA1NSwiYXV0aF90aW1lIjoxNjkyMTEwMDQwLCJqdGkiOiIyMGQ0NjNkOS1mYTJlLTQ2YzAtYjQzMC1jYTZlNzhiMWIyODAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImYwMmRkOTQzLWU0OWMtNDZhZi04YzM4LWRkODY4YjdiMDJmOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCJ9.HfPlewviXbbCk8fdZEuKbzD9lXPJtNLdDv4ogNAy9AsB31ZVJ_McXquv3w4MPGylIPx827su3bZcHGGjcfrfqx_b7pN7A8HRCH-mZ79Ddf5oQnt_le3A144XsfeMMh-X-_9WcjK-H4TnKFYhB7A7Ulm4C_m3RhkIhZd2quwzP4Luh7JZydFVg5oC8TP2diQhUSkuCpYUDNNgx0Ix6NVYFBkcSTNZ-7ITXigU7ite0syraOPDwDAcVESV5uZE6TA26ls3n87uqwAMQxPpQ4iSefPsNZk6_Hc0ZLJulz-yQQRYGrkJkPjilX9chspzCo3DlHW2uN51BMPbQ6TysNBh6A",
-						"type": "text"
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTEzNjMsImlhdCI6MTY5MjExMTA2MywiYXV0aF90aW1lIjoxNjkyMTExMDQ5LCJqdGkiOiJlY2YyZTY4OS1mMWFjLTQyMGUtOTUyOC1mZTExOWZmY2U4NmYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQxYmYwZjg0LWQ4MzYtNDg2Yi1iNjZkLTE5NDZlNjRkYjM0ZSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZWRpdG9yIiwiRURJVE9SIiwiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWRpdG9yIn0.UAF2ux9zn6gfwrckM0qwMdfq3-jo8tuzsDEOAJ2AxoaAvi89wPm3EPN3ltxrvkAU_6qyd7dI_a_SkDfFg9Y5_weqzLmzwwm1O28FaY999kJB9-wn6MLwh07FuSp0uNJxwf09XLquEDd43qSnCKJhM7LM_5gtljxZeGKU31_8hoSWCUD2n2zMLxKaOWGVVaimQQFb58DU6lYJ2LfBXF_5TFWZxxqvAYe-DMv2nkEfWmYGoA8NMayt2kn-Dbhvk7OP8F7kkNn5jAX9yXoC7vU2_VSkoTFdG2KCT_TIAkTvRKmhvvPEGgsa6X2sq0QA3-eu9YAygfZlzPjQzys3xR-QvA",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "localhost:8090/api/countries-application/belarus",
+					"raw": "localhost:8090/api/countries-application/v1/belarus",
 					"host": [
 						"localhost"
 					],
@@ -131,6 +132,7 @@
 					"path": [
 						"api",
 						"countries-application",
+						"v1",
 						"belarus"
 					]
 				},
@@ -145,12 +147,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTAzNTUsImlhdCI6MTY5MjExMDA1NSwiYXV0aF90aW1lIjoxNjkyMTEwMDQwLCJqdGkiOiIyMGQ0NjNkOS1mYTJlLTQ2YzAtYjQzMC1jYTZlNzhiMWIyODAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImYwMmRkOTQzLWU0OWMtNDZhZi04YzM4LWRkODY4YjdiMDJmOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCJ9.HfPlewviXbbCk8fdZEuKbzD9lXPJtNLdDv4ogNAy9AsB31ZVJ_McXquv3w4MPGylIPx827su3bZcHGGjcfrfqx_b7pN7A8HRCH-mZ79Ddf5oQnt_le3A144XsfeMMh-X-_9WcjK-H4TnKFYhB7A7Ulm4C_m3RhkIhZd2quwzP4Luh7JZydFVg5oC8TP2diQhUSkuCpYUDNNgx0Ix6NVYFBkcSTNZ-7ITXigU7ite0syraOPDwDAcVESV5uZE6TA26ls3n87uqwAMQxPpQ4iSefPsNZk6_Hc0ZLJulz-yQQRYGrkJkPjilX9chspzCo3DlHW2uN51BMPbQ6TysNBh6A",
-						"type": "text"
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTEzNjMsImlhdCI6MTY5MjExMTA2MywiYXV0aF90aW1lIjoxNjkyMTExMDQ5LCJqdGkiOiJlY2YyZTY4OS1mMWFjLTQyMGUtOTUyOC1mZTExOWZmY2U4NmYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQxYmYwZjg0LWQ4MzYtNDg2Yi1iNjZkLTE5NDZlNjRkYjM0ZSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZWRpdG9yIiwiRURJVE9SIiwiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWRpdG9yIn0.UAF2ux9zn6gfwrckM0qwMdfq3-jo8tuzsDEOAJ2AxoaAvi89wPm3EPN3ltxrvkAU_6qyd7dI_a_SkDfFg9Y5_weqzLmzwwm1O28FaY999kJB9-wn6MLwh07FuSp0uNJxwf09XLquEDd43qSnCKJhM7LM_5gtljxZeGKU31_8hoSWCUD2n2zMLxKaOWGVVaimQQFb58DU6lYJ2LfBXF_5TFWZxxqvAYe-DMv2nkEfWmYGoA8NMayt2kn-Dbhvk7OP8F7kkNn5jAX9yXoC7vU2_VSkoTFdG2KCT_TIAkTvRKmhvvPEGgsa6X2sq0QA3-eu9YAygfZlzPjQzys3xR-QvA",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "localhost:8090/api/countries-application/belarus/cities",
+					"raw": "localhost:8090/api/countries-application/v1/belarus/cities",
 					"host": [
 						"localhost"
 					],
@@ -158,6 +161,7 @@
 					"path": [
 						"api",
 						"countries-application",
+						"v1",
 						"belarus",
 						"cities"
 					]
@@ -172,12 +176,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTAzNTUsImlhdCI6MTY5MjExMDA1NSwiYXV0aF90aW1lIjoxNjkyMTEwMDQwLCJqdGkiOiIyMGQ0NjNkOS1mYTJlLTQ2YzAtYjQzMC1jYTZlNzhiMWIyODAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImYwMmRkOTQzLWU0OWMtNDZhZi04YzM4LWRkODY4YjdiMDJmOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCJ9.HfPlewviXbbCk8fdZEuKbzD9lXPJtNLdDv4ogNAy9AsB31ZVJ_McXquv3w4MPGylIPx827su3bZcHGGjcfrfqx_b7pN7A8HRCH-mZ79Ddf5oQnt_le3A144XsfeMMh-X-_9WcjK-H4TnKFYhB7A7Ulm4C_m3RhkIhZd2quwzP4Luh7JZydFVg5oC8TP2diQhUSkuCpYUDNNgx0Ix6NVYFBkcSTNZ-7ITXigU7ite0syraOPDwDAcVESV5uZE6TA26ls3n87uqwAMQxPpQ4iSefPsNZk6_Hc0ZLJulz-yQQRYGrkJkPjilX9chspzCo3DlHW2uN51BMPbQ6TysNBh6A",
-						"type": "text"
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTEzNjMsImlhdCI6MTY5MjExMTA2MywiYXV0aF90aW1lIjoxNjkyMTExMDQ5LCJqdGkiOiJlY2YyZTY4OS1mMWFjLTQyMGUtOTUyOC1mZTExOWZmY2U4NmYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQxYmYwZjg0LWQ4MzYtNDg2Yi1iNjZkLTE5NDZlNjRkYjM0ZSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZWRpdG9yIiwiRURJVE9SIiwiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWRpdG9yIn0.UAF2ux9zn6gfwrckM0qwMdfq3-jo8tuzsDEOAJ2AxoaAvi89wPm3EPN3ltxrvkAU_6qyd7dI_a_SkDfFg9Y5_weqzLmzwwm1O28FaY999kJB9-wn6MLwh07FuSp0uNJxwf09XLquEDd43qSnCKJhM7LM_5gtljxZeGKU31_8hoSWCUD2n2zMLxKaOWGVVaimQQFb58DU6lYJ2LfBXF_5TFWZxxqvAYe-DMv2nkEfWmYGoA8NMayt2kn-Dbhvk7OP8F7kkNn5jAX9yXoC7vU2_VSkoTFdG2KCT_TIAkTvRKmhvvPEGgsa6X2sq0QA3-eu9YAygfZlzPjQzys3xR-QvA",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "localhost:8090/api/countries-application/cities/all",
+					"raw": "localhost:8090/api/countries-application/v1/cities/all?size=10&page=2",
 					"host": [
 						"localhost"
 					],
@@ -185,8 +190,19 @@
 					"path": [
 						"api",
 						"countries-application",
+						"v1",
 						"cities",
 						"all"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
 					]
 				}
 			},
@@ -199,12 +215,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTAzNTUsImlhdCI6MTY5MjExMDA1NSwiYXV0aF90aW1lIjoxNjkyMTEwMDQwLCJqdGkiOiIyMGQ0NjNkOS1mYTJlLTQ2YzAtYjQzMC1jYTZlNzhiMWIyODAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImYwMmRkOTQzLWU0OWMtNDZhZi04YzM4LWRkODY4YjdiMDJmOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCJ9.HfPlewviXbbCk8fdZEuKbzD9lXPJtNLdDv4ogNAy9AsB31ZVJ_McXquv3w4MPGylIPx827su3bZcHGGjcfrfqx_b7pN7A8HRCH-mZ79Ddf5oQnt_le3A144XsfeMMh-X-_9WcjK-H4TnKFYhB7A7Ulm4C_m3RhkIhZd2quwzP4Luh7JZydFVg5oC8TP2diQhUSkuCpYUDNNgx0Ix6NVYFBkcSTNZ-7ITXigU7ite0syraOPDwDAcVESV5uZE6TA26ls3n87uqwAMQxPpQ4iSefPsNZk6_Hc0ZLJulz-yQQRYGrkJkPjilX9chspzCo3DlHW2uN51BMPbQ6TysNBh6A",
-						"type": "text"
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTEzNjMsImlhdCI6MTY5MjExMTA2MywiYXV0aF90aW1lIjoxNjkyMTExMDQ5LCJqdGkiOiJlY2YyZTY4OS1mMWFjLTQyMGUtOTUyOC1mZTExOWZmY2U4NmYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQxYmYwZjg0LWQ4MzYtNDg2Yi1iNjZkLTE5NDZlNjRkYjM0ZSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZWRpdG9yIiwiRURJVE9SIiwiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWRpdG9yIn0.UAF2ux9zn6gfwrckM0qwMdfq3-jo8tuzsDEOAJ2AxoaAvi89wPm3EPN3ltxrvkAU_6qyd7dI_a_SkDfFg9Y5_weqzLmzwwm1O28FaY999kJB9-wn6MLwh07FuSp0uNJxwf09XLquEDd43qSnCKJhM7LM_5gtljxZeGKU31_8hoSWCUD2n2zMLxKaOWGVVaimQQFb58DU6lYJ2LfBXF_5TFWZxxqvAYe-DMv2nkEfWmYGoA8NMayt2kn-Dbhvk7OP8F7kkNn5jAX9yXoC7vU2_VSkoTFdG2KCT_TIAkTvRKmhvvPEGgsa6X2sq0QA3-eu9YAygfZlzPjQzys3xR-QvA",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "localhost:8090/api/countries-application/countries/names",
+					"raw": "localhost:8090/api/countries-application/v1/countries/names?size=10&page=2",
 					"host": [
 						"localhost"
 					],
@@ -212,8 +229,19 @@
 					"path": [
 						"api",
 						"countries-application",
+						"v1",
 						"countries",
 						"names"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
 					]
 				}
 			},
@@ -226,12 +254,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTAzNTUsImlhdCI6MTY5MjExMDA1NSwiYXV0aF90aW1lIjoxNjkyMTEwMDQwLCJqdGkiOiIyMGQ0NjNkOS1mYTJlLTQ2YzAtYjQzMC1jYTZlNzhiMWIyODAiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImYwMmRkOTQzLWU0OWMtNDZhZi04YzM4LWRkODY4YjdiMDJmOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjYyYzk2MWU2LTVhMDEtNDkzNy1hOTViLTFmOWQxNjg3ZTNkYSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdCJ9.HfPlewviXbbCk8fdZEuKbzD9lXPJtNLdDv4ogNAy9AsB31ZVJ_McXquv3w4MPGylIPx827su3bZcHGGjcfrfqx_b7pN7A8HRCH-mZ79Ddf5oQnt_le3A144XsfeMMh-X-_9WcjK-H4TnKFYhB7A7Ulm4C_m3RhkIhZd2quwzP4Luh7JZydFVg5oC8TP2diQhUSkuCpYUDNNgx0Ix6NVYFBkcSTNZ-7ITXigU7ite0syraOPDwDAcVESV5uZE6TA26ls3n87uqwAMQxPpQ4iSefPsNZk6_Hc0ZLJulz-yQQRYGrkJkPjilX9chspzCo3DlHW2uN51BMPbQ6TysNBh6A",
-						"type": "text"
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNOHpNRi0zX3VJRzdvYnFJQmNvT01xZlQtaDlSSzVDdnMwSjF1RnpWaHNZIn0.eyJleHAiOjE2OTIxMTEzNjMsImlhdCI6MTY5MjExMTA2MywiYXV0aF90aW1lIjoxNjkyMTExMDQ5LCJqdGkiOiJlY2YyZTY4OS1mMWFjLTQyMGUtOTUyOC1mZTExOWZmY2U4NmYiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg0OTEvYXV0aC9yZWFsbXMvY291bnRyaWVzIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImQxYmYwZjg0LWQ4MzYtNDg2Yi1iNjZkLTE5NDZlNjRkYjM0ZSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNvdW50cmllcy1hdXRoIiwic2Vzc2lvbl9zdGF0ZSI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZWRpdG9yIiwiRURJVE9SIiwiZGVmYXVsdC1yb2xlcy1jb3VudHJpZXMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInNpZCI6IjUwODg2MzlhLTU0YmMtNDVjYi05MzM3LTA4ZjBmOGQ4N2MxNiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZWRpdG9yIn0.UAF2ux9zn6gfwrckM0qwMdfq3-jo8tuzsDEOAJ2AxoaAvi89wPm3EPN3ltxrvkAU_6qyd7dI_a_SkDfFg9Y5_weqzLmzwwm1O28FaY999kJB9-wn6MLwh07FuSp0uNJxwf09XLquEDd43qSnCKJhM7LM_5gtljxZeGKU31_8hoSWCUD2n2zMLxKaOWGVVaimQQFb58DU6lYJ2LfBXF_5TFWZxxqvAYe-DMv2nkEfWmYGoA8NMayt2kn-Dbhvk7OP8F7kkNn5jAX9yXoC7vU2_VSkoTFdG2KCT_TIAkTvRKmhvvPEGgsa6X2sq0QA3-eu9YAygfZlzPjQzys3xR-QvA",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "localhost:8090/api/countries-application/cities/minsk",
+					"raw": "localhost:8090/api/countries-application/v1/cities/minsk",
 					"host": [
 						"localhost"
 					],
@@ -239,6 +268,7 @@
 					"path": [
 						"api",
 						"countries-application",
+						"v1",
 						"cities",
 						"minsk"
 					]
@@ -267,7 +297,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8090/api/countries-application/countries/update",
+					"raw": "localhost:8090/api/countries-application/v1/countries/update",
 					"host": [
 						"localhost"
 					],
@@ -275,6 +305,7 @@
 					"path": [
 						"api",
 						"countries-application",
+						"v1",
 						"countries",
 						"update"
 					]
