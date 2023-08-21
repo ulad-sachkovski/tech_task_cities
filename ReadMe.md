@@ -36,7 +36,7 @@
 Note: When application is started, database recovers to initial state. However, id of countries will change (see implementation in config.data_init package)
   ```
 
-### How to navigate
+### How to navigate via Postman
   ```shell
 - Import Countries.postman_collection.json from documents to Postman
 - All get methods are allowed without authorization
@@ -46,4 +46,10 @@ Note: When application is started, database recovers to initial state. However, 
       * In response header, copy code and paste to "receive access token" end-point
       * Go to clients => countries-auth => credentidals and copy secret. Paste it to receive access token" end-point
       * Copy received access token and paste to Authorization header
+  ```
+
+### How to navigate via Swagger
+  ```shell
+- Open http://localhost:8090/webjars/swagger-ui/index.html#/
+- For receiving JWT token, watch "How to navigate via Postman"
   ```

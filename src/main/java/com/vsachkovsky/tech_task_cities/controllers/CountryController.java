@@ -31,7 +31,8 @@ public interface CountryController {
                                                             @RequestParam(required = false, defaultValue = "2") final int size);
 
     @Operation(summary = "Updates country. Accepts ready country object",
-            description = "require authorization and role EDITOR")
+            description = "require authorization and role EDITOR. " +
+                    "JWT token can be obtained through postman. Please, check README file")
     @SecurityRequirement(name = "Bearer Authentication")
     @PutMapping("/countries/update")
     ResponseEntity<Mono<CountryDto>> updateCountry(@RequestBody @Validated CountryDto countryDto);
